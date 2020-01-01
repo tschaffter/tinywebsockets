@@ -33,6 +33,18 @@ namespace websockets {
         #define WSDefaultSecuredTcpClient websockets::network::OpenSSLSecureTcpClient<WSDefaultTcpClient>
     #endif //_WS_CONFIG_NO_SSL
 
+#elif __APPLE__
+    #include <tiny_websockets/network/linux/linux_tcp_client.hpp>
+    #include <tiny_websockets/network/linux/linux_tcp_server.hpp>
+    #define WSDefaultTcpClient websockets::network::LinuxTcpClient
+    #define WSDefaultTcpServer websockets::network::LinuxTcpServer
+
+    #ifndef _WS_CONFIG_NO_SSL
+        // OpenSSL Dependent
+        #include <tiny_websockets/network/openssl_secure_tcp_client.hpp>
+        #define WSDefaultSecuredTcpClient websockets::network::OpenSSLSecureTcpClient<WSDefaultTcpClient>
+    #endif //_WS_CONFIG_NO_SSL
+
 #elif defined(__linux__)
     #include <tiny_websockets/network/linux/linux_tcp_client.hpp>
     #include <tiny_websockets/network/linux/linux_tcp_server.hpp>

@@ -1,6 +1,10 @@
 #pragma once
 
-#ifdef __linux__ 
+#if defined(__linux__) || defined(__APPLE__)
+
+#ifdef __APPLE__
+#define MSG_NOSIGNAL 0x2000 /* don't raise SIGPIPE */
+#endif	// __APPLE__
 
 #include <tiny_websockets/internals/ws_common.hpp>
 #include <tiny_websockets/network/tcp_server.hpp>

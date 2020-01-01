@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef __linux__ 
+#if defined(__linux__) || defined(__APPLE__)
 
 #include <tiny_websockets/internals/ws_common.hpp>
 #include <tiny_websockets/network/tcp_client.hpp>
