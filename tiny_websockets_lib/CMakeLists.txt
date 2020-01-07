@@ -18,7 +18,7 @@ file(GLOB_RECURSE tinyws_SOURCES
     "src/*.cpp"
 )
 
-file(GLOB_RECURSE tinyws_HEADERS 
+file(GLOB_RECURSE tinyws_HEADERS
     "include/*.h"
     "include/*.hpp"
 )
