@@ -6,4 +6,4 @@ cmake -H. -Bbuild \
     -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl
 cmake --build build -- -j1
 
-./demo_echo_client
+# ./demo_echo_client
